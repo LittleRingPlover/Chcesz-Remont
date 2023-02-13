@@ -1,0 +1,15 @@
+{% extends 'remonty/index.html' %}
+{% load static %}
+{% block page_header %}
+    <div class="container my-3 p-5">
+        <div class="text-center py-5">
+            <h2 class="fw-bolder">Strona nie istnieje</h2>
+        </div>
+        <div class="mt-1 p-5 bg-light text-dark rounded text-center">
+            <h5>Wybrana strona nie istnieje.</h5>
+            <a href="{% url 'remonty:index' %}" class="btn btn-danger rounded-pill mt-3">Powrót do strony głównej</a>
+        </div>
+    </div>
+{% endblock page_header %}
+{% block content %}
+{% endblock content %}

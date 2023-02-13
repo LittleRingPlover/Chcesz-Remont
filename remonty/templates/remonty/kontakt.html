@@ -1,0 +1,18 @@
+{% extends 'remonty/index.html' %}
+{% load static %}
+{% block page_header %}
+    <div class="container my-3 p-5">
+        <div class="text-center py-5">
+            <h2 class="fw-bolder">Kontakt</h2>
+        </div>
+        <div class="mt-1 p-5 bg-light text-dark rounded text-center">
+            <h5>{{ name.name|escape|linebreaks }}</h5>
+            <a class="btn btn-danger rounded-pill bi bi-telephone mb-3" href="tel:{{ phone_number.phone_number }}"> {{ phone_number.phone_number }}</a>
+            <p><i class="bi bi-envelope-at"></i> {{ email.email }}</p>
+            <h2><a href="{{ facebook.facebook }}"><img src="{% static 'images/fb-logo.png' %}" class="img-fluid me-2" style="width: 2rem;"></a><a href="{{ fixly.fixly }}"><img src="{% static 'images/fixly-logo.png' %}" class="img-fluid" style="width: 2rem;"></a></h2>
+            <i class="bi my-icon"></i>
+        </div>
+    </div>
+{% endblock page_header %}
+{% block content %}
+{% endblock content %}

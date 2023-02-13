@@ -1,0 +1,21 @@
+{% extends 'remonty/index.html' %}
+{% load static %}
+{% block page_header %}
+<div class="container my-3 p-5">
+            <div class="text-center py-5">
+                <h2 class="fw-bolder">O mnie</h2>
+            </div>
+            <div class="mt-1 p-5 bg-light rounded">
+                <div class="row mb-1">
+                <div class="col-md-4 mb-3">
+                    <img src="{% static 'images/about.png' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-7 offset-lg-1" style="text-align: center;">
+                    <p class="my-4" >{{ info.description|escape|linebreaks }}</p>
+                    <a class="btn btn-danger rounded-pill bi bi-telephone" href="tel:{{ phone_number.phone_number }}"> {{ phone_number.phone_number }}</a>
+                </div>
+            </div>
+</div>
+{% endblock page_header %}
+{% block content %}
+{% endblock content %}

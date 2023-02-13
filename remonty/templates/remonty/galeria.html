@@ -1,0 +1,34 @@
+{% extends 'remonty/index.html' %}
+{% load static %}
+{% block page_header %}
+<div class="container my-3 p-5" style="text-align:center">
+    <div class="text-center py-5">
+        <h2 class="fw-bolder">Galeria zdjęć</h2>
+    </div>
+        <a class="btn btn-danger rounded-pill mt-2" href="{% url 'remonty:gallery' %}" role="button">Wszystkie</a>
+        {% for category in categories %}
+        <a class="btn btn-danger rounded-pill mt-2" href="{% url 'remonty:gallery' %}?categories={{ category.id }}" role="button">{{ category.title }}</a>
+        {% endfor %}
+</div>
+        {% if filtered_images %}
+
+            <div class="container">
+                <div class="mb-4 row justify-content-center row-cols-1 row-cols-md-3 g-4">
+
+                {% for image in filtered_images %}
+                    <div class="col" align="center">
+                      <div class="mx-1" style="width: 20rem;">
+                        <a data-fancybox="images" href="{{ image.image.url }}">
+                            <img alt="image" src="{{ image.image.url }}" class="img-fluid"></a>
+                      </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+
+        {% else %}
+            <div class="my-3 text-center"><h6>Obecnie nie ma żadnych zdjęć w danej kategorii.</h6></div>
+        {% endif %}
+{% endblock page_header %}
+{% block content %}
+{% endblock content %}
